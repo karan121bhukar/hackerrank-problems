@@ -1,0 +1,46 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int s[3][3],sum1=0,sum2=0,sum3=0,sum4=0,min=1000,sum5=0,sum6=0,sum7=0,sum8=0;
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            scanf("%d",&s[i][j]);
+        }
+    }
+   int a1[3][3]={8,3,4,1,5,9,6,7,2};
+   int a2[3][3]={6,1,8,7,5,3,2,9,4};
+   int a3[3][3]={4,9,2,3,5,7,8,1,6};
+   int a4[3][3]={2,7,6,9,5,1,4,3,8};
+    int a5[3][3]={4,3,8,9,5,1,2,7,6};
+    int a6[3][3]={8,1,6,3,5,7,4,9,2};
+    int a7[3][3]={2,9,4,7,5,3,6,1,8};
+    int a8[3][3]={6,7,2,1,5,9,8,3,4};
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            sum1+=abs(a1[i][j]-s[i][j]);
+            sum2+=abs(a2[i][j]-s[i][j]);
+            sum3+=abs(a3[i][j]-s[i][j]);
+            sum4+=abs(a4[i][j]-s[i][j]);
+             sum5+=abs(a5[i][j]-s[i][j]);
+             sum6+=abs(a6[i][j]-s[i][j]);
+             sum7+=abs(a7[i][j]-s[i][j]);
+             sum8+=abs(a8[i][j]-s[i][j]);
+        }
+    }
+    int ans[8]={sum1,sum2,sum3,sum4,sum5,sum6,sum7,sum8};
+    for(int i=0;i<8;i++){
+        if(ans[i]<min){
+            min=ans[i];
+        }
+    }
+    printf("%d",min);
+    return 0;
+}
